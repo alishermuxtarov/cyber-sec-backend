@@ -4,7 +4,10 @@ import requests
 from django.core.management.base import BaseCommand
 from common.models import Keyword, KeywordCategory, Host
 from utils.converters import convert_cyrillic_to_latin
+from utils.custom_keywords import CUSTOM_KEYWORDS
 from utils.enums import HostRiskLevel, HostCategory
+from utils.fraud_hosts import FRAUD_HOSTS
+from utils.keyword_categories import KEYWORD_CATEGORIES
 from utils.text import clean_text, is_cyrillic
 
 
@@ -16,11 +19,14 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         self.clean_database()
         self.fill_extremists_lists()
-        self.fill_rublacklist_hosts()
+        # self.fill_rublacklist_hosts()
         self.prepare_keywords_to_flush()
         self.prepare_hosts_to_flush()
         self.flush_keywords_to_database()
         self.flush_hosts_to_database()
+        self.attach_category_to_hosts()
+        self.fill_fraud_hosts()
+        self.fill_custom_keywords()
 
     @staticmethod
     def clean_database():
@@ -140,3 +146,18 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS(f"Flushing hosts to database"))
         Host.objects.bulk_create(self.hosts)
         self.stdout.write(self.style.SUCCESS(f"{len(self.hosts)} hosts successfully added"))
+
+    def attach_category_to_hosts(self):
+        self.stdout.write(self.style.SUCCESS(f"Attaching categories to uncategorized hosts"))
+        for keyword, category in KEYWORD_CATEGORIES.items():
+            Host.objects.filter(category=HostCategory.OTHER, url__icontains=keyword).update(category=category)
+
+    def fill_fraud_hosts(self):
+        self.stdout.write(self.style.SUCCESS(f"Filling fraud hosts"))
+        for host_data in FRAUD_HOSTS:
+            Host.objects.create(**host_data)
+
+    def fill_custom_keywords(self):
+        self.stdout.write(self.style.SUCCESS(f"Filling custom keywords"))
+        for keyword in CUSTOM_KEYWORDS:
+            Keyword.objects.create(**keyword)

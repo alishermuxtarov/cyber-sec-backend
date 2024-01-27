@@ -2,8 +2,7 @@ import re
 
 
 def clean_text(text):
-    cleaned_text = re.sub(r"[^a-zA-Zа-яА-Я0-9\s]", "", text)
-    return cleaned_text
+    return re.sub(r"[^0-9a-zA-Zа-яА-Я,\-`'ўқғҳЎҚҒҲ\s]+", "", text)
 
 
 def is_cyrillic(text):
