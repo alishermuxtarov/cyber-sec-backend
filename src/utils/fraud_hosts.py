@@ -1,4 +1,4 @@
-from utils.enums import HostRiskLevel, HostCategory
+from utils.enums import HostRiskLevel
 
 FRAUD_HOSTS = [
     {"url": "clauodftm.top", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
@@ -24,7 +24,6 @@ FRAUD_HOSTS = [
     {"url": "edu1.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "year-click.uz-wpay.shop", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "1200000uz.click", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
-    {"url": "youtube.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "omad-shov.netlify.app", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "clickuz.viplatypayout.site", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "anorbank.uz-jnb.shop", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
@@ -33,7 +32,6 @@ FRAUD_HOSTS = [
     {"url": "alliance.uz-bvb3.shop", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "bit.ly", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "child.uz-gkpx.shop", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
-    {"url": "youtube.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "omad-shou.wf", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "makromarket.id5819108299.ru", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "child.uz-ty.shop", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
@@ -43,8 +41,6 @@ FRAUD_HOSTS = [
     {"url": "&lt;img src=&quot;nathanprinsley-files.prinsh.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "aviatortopstrategy.tilda.ws", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "truste-uz.goghels.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
-    {"url": "youtube.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
-    {"url": "youtube.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "child.uz-cxsuve.store", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "presidentuz.wealthy-pedor.shop", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "sh-u.ru", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
@@ -106,7 +102,6 @@ FRAUD_HOSTS = [
     {"url": "cutt.us", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "app.teamvalidus.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "clarkeinvest.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
-    {"url": "instagram.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "helpchildren.uztrvkl.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "oson-roullette.ckliso.com", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
     {"url": "goforomd.sbs", "category": "fraud", "risk_level": HostRiskLevel.BLACKLIST},
